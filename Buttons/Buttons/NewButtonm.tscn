@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Buttons/Buttons/NewButtonm.gd" type="Script" id=1]
+
+[node name="MenuButton" type="Button"]
+margin_right = 325.0
+margin_bottom = 20.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 128.0
+margin_right = 203.0
+margin_bottom = 14.0
+text = "Label"
+__meta__ = {
+"_edit_use_anchors_": false
+}
