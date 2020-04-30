@@ -13,7 +13,8 @@ func _ready():
 
 enum{
 	MOVE,
-	ROLL
+	ROLL,
+	SHOOT
 }
 
 var velocity = Vector2.ZERO
@@ -25,6 +26,8 @@ func _physics_process(delta):
 			moveState(delta)
 		ROLL:
 			rollState(delta)
+		SHOOT:
+			shootState(delta)
 
 func moveState(delta):
 		# Calculerer input og hatighed
@@ -50,10 +53,22 @@ func moveState(delta):
 	
 	if Input.is_action_just_pressed("ui_roll"):
 		state = ROLL
+	if Input.is_action_just_pressed("ui_action"):
+		state = SHOOT
 
 func rollState(delta):
 	animationState.travel("Roll")
 	move_and_slide(velocity)
+
+func shootState(delta):
+	var world = get_tree().current_scene
+	var Shootie = load("res://Player/Shootie.tscn")
+	var shootie = Shootie.instance()
+	
+	world.add_child(shootie)
+	shootie.global_position = global_position
+	
+	state = MOVE
 
 func rollStateFin():
 	state = MOVE
