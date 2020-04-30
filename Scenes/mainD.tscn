@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Enviroment/Astroid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enviroment/AstroidSpawner.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -24, -24 )
@@ -19,7 +19,7 @@ b = Vector2( 536, 328 )
 a = Vector2( -24, -24 )
 b = Vector2( 536, -24 )
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 
 [node name="Border" type="StaticBody2D" parent="."]
 
@@ -35,8 +35,7 @@ shape = SubResource( 3 )
 [node name="NorthBorder" type="CollisionShape2D" parent="Border"]
 shape = SubResource( 4 )
 
+[node name="AstroidSpawner" parent="." instance=ExtResource( 2 )]
+
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 256, 256 )
-
-[node name="Astroid" parent="." instance=ExtResource( 2 )]
-position = Vector2( 256, 184 )

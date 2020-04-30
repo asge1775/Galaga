@@ -29,6 +29,8 @@ func _physics_process(delta):
 		SHOOT:
 			shootState(delta)
 
+
+# Movement
 func moveState(delta):
 		# Calculerer input og hatighed
 	var inputVector = Vector2.ZERO
@@ -56,19 +58,23 @@ func moveState(delta):
 	if Input.is_action_just_pressed("ui_action"):
 		state = SHOOT
 
-func rollState(delta):
+
+# Rolling
+func rollState(delta):	# Rollstate start
 	animationState.travel("Roll")
 	move_and_slide(velocity)
+func rollStateFin():	# Rollstate finished
+	state = MOVE
 
+
+# Shooting
 func shootState(delta):
 	var world = get_tree().current_scene
 	var Shootie = load("res://Player/Shootie.tscn")
 	var shootie = Shootie.instance()
-	
 	world.add_child(shootie)
 	shootie.global_position = global_position
 	
 	state = MOVE
 
-func rollStateFin():
-	state = MOVE
+
