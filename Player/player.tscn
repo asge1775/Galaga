@@ -177,24 +177,24 @@ blend_point_1/pos = 1.0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
-[sub_resource type="AnimationNodeStateMachine" id=20]
+[sub_resource type="AnimationNodeStateMachine" id=22]
 states/Idle/node = SubResource( 9 )
 states/Idle/position = Vector2( 380, 128 )
 states/Move/node = SubResource( 12 )
 states/Move/position = Vector2( 533, 128 )
 states/Roll/node = SubResource( 15 )
 states/Roll/position = Vector2( 380, 42 )
-transitions = [ "Idle", "Roll", SubResource( 16 ), "Roll", "Idle", SubResource( 17 ), "Idle", "Move", SubResource( 18 ), "Move", "Idle", SubResource( 19 ), "Move", "Roll", SubResource( 23 ), "Roll", "Move", SubResource( 24 ) ]
+transitions = [ "Idle", "Roll", SubResource( 16 ), "Roll", "Idle", SubResource( 17 ), "Idle", "Move", SubResource( 18 ), "Move", "Idle", SubResource( 19 ), "Move", "Roll", SubResource( 20 ), "Roll", "Move", SubResource( 21 ) ]
 start_node = "Idle"
 graph_offset = Vector2( 92, 17 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
-[sub_resource type="CapsuleShape2D" id=22]
+[sub_resource type="CapsuleShape2D" id=24]
 radius = 6.53114
 height = 10.9377
 
@@ -215,12 +215,12 @@ anims/tiltLeft = SubResource( 6 )
 anims/tiltRight = SubResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 20 )
+tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 21 )
+parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = 0
 parameters/Move/blend_position = 0
 parameters/Roll/blend_position = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 22 )
+shape = SubResource( 24 )
