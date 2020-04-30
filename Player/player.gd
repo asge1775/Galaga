@@ -73,7 +73,7 @@ func shootState(delta):
 	var Shootie = load("res://Player/Shootie.tscn")
 	var shootie = Shootie.instance()
 	world.add_child(shootie)
-	shootie.global_position = global_position
+	shootie.global_position = Vector2(global_position.x, global_position.y - 10)
 	
 	state = MOVE
 
