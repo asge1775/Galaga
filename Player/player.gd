@@ -32,7 +32,7 @@ func _physics_process(delta):
 
 # Movement
 func moveState(delta):
-		# Calculerer input og hatighed
+		# Calculates input and velocity
 	var inputVector = Vector2.ZERO
 	inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	inputVector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
