@@ -35,6 +35,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 
 [node name="Border" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="WestBorder" type="CollisionShape2D" parent="Border"]
 shape = SubResource( 1 )

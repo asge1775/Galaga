@@ -77,4 +77,5 @@ func shootState(delta):
 	
 	state = MOVE
 
-
+func _on_Hurtbox_area_entered(area):
+	queue_free()
