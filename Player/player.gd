@@ -79,3 +79,4 @@ func shootState(delta):
 
 func _on_Hurtbox_area_entered(area):
 	queue_free()
+	get_tree().change_scene("res://Scenes/TitleScreen.tscn")

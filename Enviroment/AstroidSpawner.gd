@@ -3,7 +3,7 @@ extends Node2D
 var runs = 0
 
 var spawnTime
-var spawnTimeLim = [60,240]
+var spawnTimeLim = [60,200]
 
 var spawnXSpeed = [25,100]
 var spawnYSpeed = [-50,50]
