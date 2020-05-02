@@ -3,8 +3,10 @@
 [ext_resource path="res://Menu/Buttons/Buttons/NewButtonm.tscn" type="PackedScene" id=1]
 
 [node name="ContinueButton" instance=ExtResource( 1 )]
-margin_top = 104.0
-margin_bottom = 124.0
+margin_top = 128.0
+margin_bottom = 148.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
 scene_to_load = "res://game/Continue.tscn"
 
 [node name="Label" parent="." index="0"]

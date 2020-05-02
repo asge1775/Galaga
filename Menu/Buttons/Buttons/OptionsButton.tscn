@@ -3,6 +3,8 @@
 [ext_resource path="res://Menu/Buttons/Buttons/NewButtonm.tscn" type="PackedScene" id=1]
 
 [node name="OptionsButton" instance=ExtResource( 1 )]
+margin_top = 112.0
+margin_bottom = 132.0
 scene_to_load = "res://game/Options.tscn"
 
 [node name="Label" parent="." index="0"]
