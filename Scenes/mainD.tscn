@@ -81,6 +81,7 @@ spawnTime = 5
 position = Vector2( 136, -32 )
 
 [node name="Shoy" parent="Enemies/Path/PathFollow2D" index="0" instance=ExtResource( 5 )]
+shootStart = 5
 
 [node name="Path2" parent="Enemies" instance=ExtResource( 4 )]
 curve = SubResource( 6 )
