@@ -3,7 +3,7 @@
 [ext_resource path="res://Player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enviroment/AstroidSpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UX/Backdrops/Level1.jpg" type="Texture" id=3]
-[ext_resource path="res://Enemies/pathfollower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Follower.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Shoy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SegmentShape2D" id=1]
@@ -24,12 +24,12 @@ b = Vector2( 536, -24 )
 
 [sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 136, -32, 0, 0, 0, 0, 120, 56, 0, 0, 0, 0, 72, 152, 0, 0, 0, 0, 96, 232, 0, 0, 0, 0, 144, 272, 0, 0, 0, 0, 152, 312 )
+"points": PoolVector2Array( 0, 0, 0, 0, 560, -48, 49.9865, -46.311, -49.9865, 46.311, 32, 96, -15.437, -9.55623, 15.437, 9.55623, 40, 184, 0, 0, 0, 0, 544, 336 )
 }
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 360, -64, 0, 0, 0, 0, 328, 16, 0, 0, 0, 0, 272, 88, 0, 0, 0, 0, 248, 136, 0, 0, 0, 0, 296, 184, 0, 0, 0, 0, 384, 224, 0, 0, 0, 0, 416, 272, 0, 0, 0, 0, 408, 312 )
+"points": PoolVector2Array( 0, 0, 0, 0, -112, -65.8605, -14.7019, -31.1817, 14.7019, 31.1817, 464, 85.9535, 29.4038, -36.1051, -29.4038, 36.1051, 464, 157.395, 0, 0, 0, 0, -48, 327.07 )
 }
 
 [node name="World" type="Node2D"]
@@ -73,24 +73,81 @@ wait_time = 180.0
 one_shot = true
 autostart = true
 
-[node name="Path" parent="Enemies" instance=ExtResource( 4 )]
+[node name="Brigade" type="Path2D" parent="Enemies"]
+position = Vector2( 0, 35 )
+scale = Vector2( 1, 0.895833 )
 curve = SubResource( 5 )
-spawnTime = 5
 
-[node name="PathFollow2D" parent="Enemies/Path" index="0"]
-position = Vector2( 136, -32 )
+[node name="Follower" parent="Enemies/Brigade" instance=ExtResource( 4 )]
+position = Vector2( 416, 8 )
 
-[node name="Shoy" parent="Enemies/Path/PathFollow2D" index="0" instance=ExtResource( 5 )]
+[node name="Shoy" parent="Enemies/Brigade/Follower" instance=ExtResource( 5 )]
+shootStart = 1
+
+[node name="Follower2" parent="Enemies/Brigade" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 1
+
+[node name="Shoy" parent="Enemies/Brigade/Follower2" instance=ExtResource( 5 )]
+shootStart = 2
+
+[node name="Follower3" parent="Enemies/Brigade" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 2
+
+[node name="Shoy" parent="Enemies/Brigade/Follower3" instance=ExtResource( 5 )]
+shootStart = 3
+
+[node name="Follower4" parent="Enemies/Brigade" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 3
+
+[node name="Shoy" parent="Enemies/Brigade/Follower4" instance=ExtResource( 5 )]
+shootStart = 4
+
+[node name="Follower5" parent="Enemies/Brigade" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 4
+
+[node name="Shoy" parent="Enemies/Brigade/Follower5" instance=ExtResource( 5 )]
 shootStart = 5
 
-[node name="Path2" parent="Enemies" instance=ExtResource( 4 )]
+[node name="Brigade2" type="Path2D" parent="Enemies"]
+position = Vector2( 0, 35 )
+scale = Vector2( 1, 0.895833 )
 curve = SubResource( 6 )
 
-[node name="PathFollow2D" parent="Enemies/Path2" index="0"]
-position = Vector2( 360, -64 )
+[node name="Follower" parent="Enemies/Brigade2" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 3
 
-[node name="Shoy" parent="Enemies/Path2/PathFollow2D" index="0" instance=ExtResource( 5 )]
+[node name="Shoy" parent="Enemies/Brigade2/Follower" instance=ExtResource( 5 )]
+shootStart = 4
 
-[editable path="Enemies/Path"]
+[node name="Follower2" parent="Enemies/Brigade2" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 4
 
-[editable path="Enemies/Path2"]
+[node name="Shoy" parent="Enemies/Brigade2/Follower2" instance=ExtResource( 5 )]
+shootStart = 5
+
+[node name="Follower3" parent="Enemies/Brigade2" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 5
+
+[node name="Shoy" parent="Enemies/Brigade2/Follower3" instance=ExtResource( 5 )]
+shootStart = 6
+
+[node name="Follower4" parent="Enemies/Brigade2" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 6
+
+[node name="Shoy" parent="Enemies/Brigade2/Follower4" instance=ExtResource( 5 )]
+shootStart = 7
+
+[node name="Follower5" parent="Enemies/Brigade2" instance=ExtResource( 4 )]
+position = Vector2( 560, -48 )
+spawnTime = 7
+
+[node name="Shoy" parent="Enemies/Brigade2/Follower5" instance=ExtResource( 5 )]
+shootStart = 8
