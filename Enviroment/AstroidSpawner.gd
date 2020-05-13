@@ -3,10 +3,10 @@ extends Node2D
 var runs = 0
 
 var spawnTime
-var spawnTimeLim = [60,200]
+export var spawnTimeLim = [30,150]
 
-var spawnXSpeed = [25,100]
-var spawnYSpeed = [-50,50]
+export var spawnXSpeed = [25,100]
+export var spawnYSpeed = [-50,50]
 
 var spawnWidth = OS.get_window_size().x
 var spawnHeight = 0

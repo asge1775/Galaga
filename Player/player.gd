@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const maxSpeed = 300
-const acceleration = 900
-const friction = 1100
+export var maxSpeed = 300
+export var acceleration = 900
+export var friction = 1100
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -77,6 +77,15 @@ func shootState(delta):
 	
 	state = MOVE
 
+func create_explosion_effect():
+	var world = get_tree().current_scene
+	var ExplosionEffect = load("res://Effects/ExplosionEffect.tscn")
+	var explosionEffect = ExplosionEffect.instance()
+	
+	world.add_child(explosionEffect)
+	explosionEffect.global_position = global_position
+
 func _on_Hurtbox_area_entered(area):
+	create_explosion_effect()
 	queue_free()
 	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
