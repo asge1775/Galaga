@@ -23,7 +23,7 @@ collision_mask = 9
 
 [node name="CollisionShape2D" parent="Shootbox" index="0"]
 shape = SubResource( 1 )
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_exited"]
 [connection signal="area_entered" from="Shootbox" to="." method="_on_Shootbox_area_entered"]
 
 [editable path="Shootbox"]
